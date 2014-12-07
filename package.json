@@ -1,0 +1,21 @@
+{
+  "name": "Jison DSL parser example",
+  "version": "1.0.0",
+  "description": "Based on the talk by Neil Green at JSConf 2014: 'Writing Custom DSLs'",
+  "main": "shipping.js",
+  "scripts": {
+    "compile": "./node_modules/.bin/jison ./shipping.jison -o ./shipping.js",
+    "test": "mocha"
+  },
+  "keywords": [
+    "jison",
+    "dsl"
+  ],
+  "author": "Rafael Corral",
+  "license": "MIT",
+  "dependencies": {
+    "jison": "^0.4.15",
+    "mocha": "^2.0.1",
+    "should": "^4.3.0"
+  }
+}
