@@ -7,13 +7,23 @@ It's a great talk, and should be watched before making sense of this parser.
 The tests should help you understand how the parser works and what it does.
 
 Install
-=======
+-------
 
 `$ git clone git@github.com:rcorral/jison-dsl-parser-example.git`  
 `$ cd jison-dsl-parser-example`  
 `$ npm install`
 
+Build Parser
+------------
+
+`$ npm run-script build`
+
 Tests
-=====
+-----
 
 `$ npm test`
+
+License
+-------
+
+MIT
