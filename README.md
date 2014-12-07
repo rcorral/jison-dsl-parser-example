@@ -9,8 +9,8 @@ The tests should help you understand how the parser works and what it does.
 Install
 =======
 
-`$ git clone git@github.com:rcorral/jison-dsl-parser-example.git`
-`$ cd jison-dsl-parser-example`
+`$ git clone git@github.com:rcorral/jison-dsl-parser-example.git`  
+`$ cd jison-dsl-parser-example`  
 `$ npm install`
 
 Tests
