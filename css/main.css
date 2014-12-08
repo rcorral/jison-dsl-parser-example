@@ -4,6 +4,12 @@ body {
     padding: 20px 15%;
 }
 
+a {
+    color: #008cba;
+}
+    a:visited {
+        color: #008cba
+    }
 
 /*
  * EXAMPLES
