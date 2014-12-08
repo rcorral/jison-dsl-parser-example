@@ -253,10 +253,11 @@ parse: function parse(input) {
 
     function merge(a, b) {
         if (!Array.isArray(a)) {
-            return [a, b];
+            a = [a];
         }
 
-        return a.push(b);
+        a.push(b);
+        return a;
     }
 
     function normalizeRules(rules) {
