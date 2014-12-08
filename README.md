@@ -1,7 +1,7 @@
 Jison DSL parser example
 ========================
 
-See [Demo](http://rcorral.github.io/jison-dsl-parser-example/).
+See [demo](http://rcorral.github.io/jison-dsl-parser-example/).
 
 This is a simple shipping DSL parser. It's based on the code mentioned at the end of [this talk](https://www.youtube.com/watch?v=lm4jEcnWeKI) by Neil Green at JSConf 2014. I've simply written a different implementation of the DSL parser using [Jison](http://zaach.github.io/jison/).
 
