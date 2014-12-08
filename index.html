@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" initial-scale="1.0">
+
+    <title>Jison DSL parser example</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./css/highlight-js-github.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <script src="./js/highlight.pack.js"></script>
+    <script src="./js/shipping.js"></script>
+    <script>
+        'use strict'
+        function DSLInputInit() {
+            var input = document.querySelector('.dsl__input');
+            var output = document.querySelector('.ast__output');
+
+            function parseDSLInput() {
+                var ast;
+                try {
+                    ast = parser.parse(input.value);
+                    ast = JSON.stringify(ast, undefined, 2);
+                } catch (e) {
+                    ast = 'Invalid input.';
+                }
+                output.innerHTML = ast;
+                hljs.highlightBlock(output);
+            }
+
+            input.addEventListener('keyup', parseDSLInput);
+            input.addEventListener('change', parseDSLInput);
+            parseDSLInput();
+        }
+
+        function buttonsInit() {
+            var buttons = document.querySelectorAll('button');
+            var input = document.querySelector('.dsl__input');
+
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', function(e) {
+                    input.value = JSON.parse(e.target.dataset.dsl).dsl;
+                    input.dispatchEvent(new CustomEvent('change'));
+                });
+            };
+
+            document.querySelector('.btn--original').dataset.dsl = JSON.stringify({dsl: input.value});
+        }
+
+        function main() {
+            DSLInputInit();
+            buttonsInit();
+        }
+
+        window.onload = main;
+    </script>
+</head>
+<body>
+    <h1>Jison DSL demo</h1>
+    <p>
+        This demo is a demo based on Neil Green's talk on Writing Custom DSLs at JSConf 2014. I wrote a parser for the code that he describes at the end of <a href="https://www.youtube.com/watch?v=lm4jEcnWeKI">his talk</a>.
+    </p>
+
+    <p>
+        <h2 class="dsl-examples">DSL Examples:</h2>
+        <button class="btn btn--original">Original</button>
+        <button class="btn" data-dsl='{"dsl": "when domestically\n    if flexible cheaply\n    if specified pass\nwhen internationally\n    then cheaply"}'>Grammar only</button>
+        <button class="btn" data-dsl='{"dsl": "when shipping domestically\n    if delivery date is flexible ship as cheaply as possible"}'>1 Rule</button>
+        <button class="btn" data-dsl='{"dsl": "if delivery date is specified pass shipping cost on to customer"}'>1 Condition</button>
+    </p>
+
+    <textarea class="dsl__input">
+when shipping domestically
+    if delivery date is flexible ship as cheaply as possible
+    if delivery date is specified pass shipping cost on to customer
+when shipping internationally
+    then ship as cheaply as possible
+    </textarea>
+    <pre><code class="ast__output"></code></pre>
+</body>
+</html>

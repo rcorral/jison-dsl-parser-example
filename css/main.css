@@ -1,0 +1,91 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 20px 15%;
+}
+
+
+/*
+ * EXAMPLES
+ */
+
+.dsl-examples {
+    display: inline;
+    font-size: 18px;
+}
+
+.btn {
+    background-color: #E66082;
+    border-radius: 3px;
+    border-width: 0px;
+    box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.2) inset;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    display: inline-block;
+    line-height: normal;
+    margin: 0 0 1.25rem 4px;
+    padding-top: .5rem;
+    padding-right: 1rem;
+    padding-bottom: .5275rem;
+    padding-left: 1rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 300ms ease-out;
+    outline: none;
+}
+
+    .btn:hover {
+        background-color: #C55672;
+    }
+
+
+/*
+ * DSL-TO-AST
+ */
+
+.dsl__input {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    height: 160px;
+    font-size: 16px;
+    outline: none;
+    overflow: auto;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+.ast__output {
+    border-radius: 5px;
+}
+
+
+/*
+ * MEDIA-QUERIES
+ */
+
+@media (max-width: 830px) {
+    .dsl-examples { display: block; }
+}
+
+@media (max-width: 730px) {
+    body { padding: 20px 10%; }
+}
+
+@media (max-width: 630px) {
+    body { padding: 20px 5%; }
+}
+
+/* For mobile, they won't get the indentation of the conditions */
+@media (max-width: 530px) {
+    .dsl__input { white-space: nowrap; }
+}
+
+@media (max-width: 495px) {
+    .btn { width: 48%; }
+}
