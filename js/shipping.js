@@ -641,30 +641,28 @@ var YYSTATE=YY_START;
 switch($avoiding_name_collisions) {
 case 0:/* skip whitespace */
 break;
-case 1:/* skip whitespace */
+case 1:return 8
 break;
-case 2:return 8
+case 2:return 14
 break;
-case 3:return 14
+case 3:return 9
 break;
-case 4:return 9
+case 4:return 12
 break;
-case 5:return 12
+case 5:return 13
 break;
-case 6:return 13
+case 6:return 11
 break;
-case 7:return 11
+case 7:/* skip transitionary words */
 break;
 case 8:return 5
 break;
-case 9:/* skip transitionary words */
-break;
-case 10:return 'INVALID'
+case 9:return 'INVALID'
 break;
 }
 },
-rules: [/^(?:\s+)/,/^(?:\n|\r)/,/^(?:when\b)/,/^(?:then\b)/,/^(?:domestically|internationally\b)/,/^(?:flexible|specified\b)/,/^(?:cheaply|pass\b)/,/^(?:if\b)/,/^(?:$)/,/^(?:shipping|delivery|date|is|ship|as|possible|cost|on|to|customer\b)/,/^(?:.)/],
-conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10],"inclusive":true}}
+rules: [/^(?:\s+)/,/^(?:when\b)/,/^(?:then\b)/,/^(?:domestically|internationally\b)/,/^(?:flexible|specified\b)/,/^(?:cheaply|pass\b)/,/^(?:if\b)/,/^(?:shipping|delivery|date|is|ship|as|possible|cost|on|to|customer\b)/,/^(?:$)/,/^(?:.)/],
+conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9],"inclusive":true}}
 });
 return lexer;
 })();
