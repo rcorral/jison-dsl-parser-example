@@ -5,15 +5,14 @@
 %%
 
 \s+                                               /* skip whitespace */
-\n|\r                                             /* skip whitespace */
 when                                              return 'WHEN'
 then                                              return 'THEN'
 domestically|internationally                      return 'LOCATION'
 flexible|specified                                return 'DATE_SPECIFIED'
 cheaply|pass                                      return 'SHIPPING_TYPE'
 if                                                return 'IF'
-<<EOF>>                                           return 'EOF'
 shipping|delivery|date|is|ship|as|possible|cost|on|to|customer        /* skip transitionary words */
+<<EOF>>                                           return 'EOF'
 .                                                 return 'INVALID'
 
 /lex
